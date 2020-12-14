@@ -2,14 +2,10 @@
 
 ## Open questions
 - What is symlinking?
-- Binary vs script
 - what are environment variables?
-  https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux#:~:text=Environmental%20variables%20are%20used%20to,like%20the%20current%20working%20directory.
-- Is a .rb file an executable?
-  - How to turn a Ruby file into an executable: https://medium.com/@mbauza/executable-file-in-ruby-165ec254d564
-    - https://www.vikingcodeschool.com/falling-in-love-with-ruby/running-ruby-scripts
-  - answer: an rb file can be an executable if you a) change its permissions to allow exeuction and b) add shebang line to top of the file
-    - alternatively, you can just run the file with ruby (ie, ruby your-filename.rb)
+  -   https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux#:~:text=Environmental%20variables%20are%20used%20to,like%20the%20current%20working%20directory.
+- What are binstubs in a rails project?
+  - Why do we need bundle exec?
 
 ## Contents
 - PATH
@@ -36,3 +32,21 @@
 
 - A binary file is any file that isn't plain text.
   - Examples: `.mp3`, `.jpg`, etc.
+- So:
+  - not all binaries are executables (because you can't run a JPG).
+  - not all executables are binaries (because a plaintext `.rb` file can be an executable when given the correct permissions).
+  - BUT: `binary` is often used as a short form of `binary executable file`. So when speaking loosely, the distinction is blurred.
+
+### Turn a script file into an executable
+- By default, a ruby script file must be explicitly run with `ruby`.
+  - For example, you need to type `ruby my_example_script.rb` in the terminal.
+- Turning a conventional `.rb` file into an executable requires 2 steps:
+  1. Add a shebang line to the top of the file `#!/usr/bin/ruby` (see below for explanation).
+  2. Change file permissions to make the file executable: `chmod -x my_example_script.rb`.
+- Now the file can be executed directly from the shell, by typing `./my_example_script.rb`
+  - You can even remove the `.rb` suffix.
+  
+- *Shebang Line*
+  - For example: `#!/bin/bash` or `#!/usr/bin/python3`
+  - Its purpose is to tell the Shell which interpreter should be used to interpret the script.
+  - It consists of a `#!` followed by the path to an interpreter such as bash, python, ruby or perl.
