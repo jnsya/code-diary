@@ -37,6 +37,13 @@
   - not all executables are binaries (because a plaintext `.rb` file can be an executable when given the correct permissions).
   - BUT: `binary` is often used as a short form of `binary executable file`. So when speaking loosely, the distinction is blurred.
 
+### Directories where CLI executables are normally stored
+- `/bin` → user utilities — contains some common executables used to navigate directories and manage files via the command line (cd, ls, rm, etc)
+- `/sbin` → system programs and administration utilities — contains executables that handle things like booting, restoring, recovering, and/or repairing the system (launchd, reboot, mount, etc)
+- `/usr/bin` → common utilities, programming tools, and applications — contains executables that aren’t vital to the system’s functionality but are still included in the operating system (ssh, php, vim, etc)
+- `/usr/sbin` → system daemons & system utilities — contains executables that are generally run as background processes ( cron, php-fpm, coreaudiod, etc)
+- `/usr/local/bin`, `/usr/local/sbin` → user-installed executables, libraries, etc. — contains executables that unlike the above folders aren’t included by default with the operating system (custom shell scripts, and programs installed via Homebrew, utilities installed with and needed by certain GUI programs, etc.)
+
 ### Turn a script file into an executable
 - By default, a ruby script file must be explicitly run with `ruby`.
   - For example, you need to type `ruby my_example_script.rb` in the terminal.
