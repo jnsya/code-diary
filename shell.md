@@ -57,3 +57,29 @@
   - For example: `#!/bin/bash` or `#!/usr/bin/python3`
   - Its purpose is to tell the Shell which interpreter should be used to interpret the script.
   - It consists of a `#!` followed by the path to an interpreter such as bash, python, ruby or perl.
+
+## File Permissions
+- What the hell is going on in a permissions line like `drwxr-xr-x`? 
+- `-rwxr-xr-x` is an example.
+  - Overview: this tells us whether the entry is a file or directory, and the 3 possible permissions (read, write, execute), for the 3 possible user types: owner, group and other.
+  - The possible permission characters are: `-`, `r`, `w` and `x`.
+    - `-`: no permission
+    - `r`: read permission
+    - `w`: write permission
+    - `x`: execute permssion
+  - The first character isn't a permission, it's whether the entry is a file or directory.
+    - can be either `-` (a file) or `d` (a directory).
+
+  - Then follows 9 characters. These should be read as the permissions for 3 seperate types of user, in order.
+    - First 3: `rwx` 
+      - Owner's permissions.
+      - By default, the user who created the file is the owner.
+      - Here, all three permissions (read, write, execute) are set.
+    - Second 3: `r-x`
+      - The group's permissions.
+      - Here, r and execute (not write).
+    - Third 3: `r-x`
+      - Any other user (not the owner or the group).
+
+    - Source: [File Permissions blog](https://www.guru99.com/file-permissions.html)
+

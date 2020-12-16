@@ -1,8 +1,13 @@
 # Vim
 
+## Contents
+- Grammar
+  - Key terms
+  - Structure of a command
+
 ## Grammar
 
-### Terms
+### Key Terms
 - *Operator*
   - The verbs: stuff you do to text.
   - Main Examples: d, y, c.
@@ -18,7 +23,7 @@
     - Examples:
       - s: sentence 
       - p: paragraph
-      - [ ] { } ( ) " ' ` < >: all specify objects wrapped by their corresponding character
+      - [ ] { } ( ) " ' ` < >: all specify objects wrapped by their corresponding character`
   - Examples
     - `das`: delete current sentence including surrounding whitespace.
     - `vi'`: visually select inside a string, without including the `'` character.
@@ -36,5 +41,21 @@
     - `3yw`
     - `2das`: delete around current sentence and the next.
 
+## Interesting keys I didn't know about
+Commands
+- gU: uppercase
+- gu: lowercase
+
+Motions:
+- H: move to top of screen
+- M: move to middle of screen
+- L: move to bottom of screen
+  
+Screen:
+- zz: center window on current line
+- zt: top this line
+- zb: bottom this line
+
 ## Sources
+- [Cheatsheet](https://devhints.io/vim#operators)
 - [Vim grammar](https://takac.github.io/2013/01/30/vim-grammar/)
