@@ -4,8 +4,6 @@
 - What is symlinking?
 - what are environment variables?
   -   https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux#:~:text=Environmental%20variables%20are%20used%20to,like%20the%20current%20working%20directory.
-- What are binstubs in a rails project?
-  - Why do we need bundle exec?
 
 ## Contents
 - PATH
@@ -83,3 +81,33 @@
 
     - Source: [File Permissions blog](https://www.guru99.com/file-permissions.html)
 
+## Input/Output Streams
+Open Questions:
+  - What exactly is a stream?
+  - What's the difference between `|` and `<` in a bash script?
+  - 
+- The three standard streams are standard input (`stdin`), standard output (`stdout`), and standard error (`stderr`).
+  - Each has an integer file descriptor associated with it:
+    - 0: stdin
+    - 1: stdout
+    - 2: stderr
+
+### Redirect `>`
+- Redirects pass output to a file or stream.
+  - `ls > capture.txt` redirects the output of `ls` to a file called `capture.txt`
+    - if `capture.txt` does not exist, it will be created. If it does exist, it will be overwritten.
+  - `ls >> capture.txt` does the same as above, but appends rather than overwrites.
+- By default, `>` redirects stdout. But it can be used to redirect stderr with `2>`.
+  - `./example_script.sh 2> capture.txt` redirects only stderr (using 2, the integer file descriptor for stderr).
+    - Here, stdout would be printed to screen as normal, but any error messages get redirected to the capture.txt file.
+    - `ls > capture.txt` is equivalent to `ls 1> capture.txt`
+- Specify seperate files for stdout and stderr
+  - `./example_script.sh 1> capture1.txt 2> capture2.txt`: stdout goes to capture1, stderr goes to capture2.
+- Redirect both stdout and stderr to the same file:
+  - `./example_script.sh &> capture.txt`
+
+### Pipe `|`
+- 
+
+- [HowToGeek on Linux streams](https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/)
+- Linux Pocket Guide book
