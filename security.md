@@ -1,5 +1,9 @@
 # Security
 
+## Open questions
+- Private key vs public key?
+- Walk through of 2-way SSL process.
+- Definitions of PGP / SSL / SSH.
 
 ## Encryption & Hashing
 
@@ -13,7 +17,7 @@
   - Maps data of any size to a unique string of fixed length.
     - eg: SHA-256 algorithm converts data into a 256-bit, 64-character hexadecimal string
   
-Terms:
+## Terms:
 - _to Hash_
 - _to Encrypt_
 
@@ -21,8 +25,8 @@ Terms:
   - Random text added to some data before hashing. 
   - Purpose: prevent hacker using rainbow table to deduce password from a given hash.
   - By adding text prior to hashing, a hacker can't guess the password from the hash.
+      - ie, they're a defence against _Rainbow table_ attacks
   - Salts are stored in the database alongside the hash.
-  - 
 - _Collision_
   - When a hashing algorithm produces the same hash from different inputs.
   - Problem 
@@ -34,7 +38,6 @@ Terms:
 
 
 ## Password hashing walkthrough
-
 ### Saving a password:
 - User enters a password on a form.
 - The password is sent to the server
@@ -50,3 +53,7 @@ Terms:
 - The new hash is compared to the hash in the database.
   - If it's the same, the user is authenticated.
   - If not, the user is rejected.
+
+## Sources
+- [Hashing and Encryption](https://www.thesslstore.com/blog/difference-encryption-hashing-salting/#:~:text=Hashing%20is%20the%20practice%20of,is%20a%20one%2Dway%20function.)
+- 

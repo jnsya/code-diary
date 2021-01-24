@@ -7,7 +7,7 @@
 - Servers
   - https://computer.howstuffworks.com/web-server.htm
  
- 
+- What's a hexadecimal string? 
 
 - What does REPL stand for, and what does it mean?
 
