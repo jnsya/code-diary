@@ -56,6 +56,17 @@ Screen:
 - zt: top this line
 - zb: bottom this line
 
+## Ex Commands
+- `:read somefile.rb`: yank the contents of somefile and paste after cursor.
+
+## Useful Plugin Commands
+
+*Vim Surround*
+- uys`+text-object+punctuation: surround a text object with punctuation.
+  - eg: `ysiW'`: surround current word with `'`.
+- Visually select then `S`+punctuation
+  
+
 ## Sources
 - [Cheatsheet](https://devhints.io/vim#operators)
 - [Vim grammar](https://takac.github.io/2013/01/30/vim-grammar/)

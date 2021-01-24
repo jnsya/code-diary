@@ -1,6 +1,6 @@
 # HypoPG 
 
-HypoPG is a Postgres extension for safely testing whether a new database index will be useful or not on your production database, without having to actually create the index.
+HypoPG is a Postgres extension for safely testing whether a new index will be useful or not on your production database, without having to actually create the index.
 
 It does this by creating "hypothetical" indexes, which don't interfere with real-life queries from your application, and which only apply to `EXPLAIN` queries in the current session.
 
@@ -40,13 +40,13 @@ Bitmap Heap Scan on shipments  (cost=520.45..29424.47 rows=8261 width=4)
         Index Cond: (courier_company_id = 476)
 ```
 
-If you're new to query plans, the information can be overwhelming, but here are the key pieces of information for our purposes:
+If you're new to query plans, the information can be overwhelming, but here's what's important for our purposes:
 - The overall "cost" of the plan is 29424.47. 
 - We already have a relevant index (`index_shipments_on_courier_company_id`), and the query plan begins by querying this index.
 - Next, the plan returns to the database heap to check whether a shipment is a quote or not.
 - The cost of using the index to filter by courier company ID (518.38) is relatively small compared to the total cost of the plan.
 
-So to summarise: we have an index on 1/3rd of the columns needed for the query, but the query remains expensive.
+So to summarise: we have an index on 1 of the 3 of the columns needed for the query, but the query remains expensive.
 
 Our reading of the query plan gave us an hypothesis: the current index would help more if it contained all the information required by the query. If we added is_quote to the index (creating a multi-column index), we could speed up the query.
 

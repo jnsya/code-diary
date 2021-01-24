@@ -93,7 +93,7 @@ Open Questions:
     - 2: stderr
 
 ### Redirect `>`
-- Redirects pass output to a file or stream.
+- Redirect passes output to a file or stream.
   - `ls > capture.txt` redirects the output of `ls` to a file called `capture.txt`
     - if `capture.txt` does not exist, it will be created. If it does exist, it will be overwritten.
   - `ls >> capture.txt` does the same as above, but appends rather than overwrites.
