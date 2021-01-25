@@ -4,6 +4,7 @@
 - Private key vs public key?
 - Walk through of 2-way SSL process.
 - Definitions of PGP / SSL / SSH.
+- What's a checksum?
 
 ## Encryption & Hashing
 
