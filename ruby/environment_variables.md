@@ -1,17 +1,4 @@
-# Ruby
-
-
-- Ruby Core vs Ruby Standard Library
-  - Core methods, classes and modules are available automatically.
-  - Standard Library methods, classes and modules need to be explicitly loaded with - `require` - before you can use them
-
-
-- Run 
-
-
-puts 
-
-## Environment Variables
+# Environment Variables
 - A variable whose value is set outside the application.
 - An environment variable is defined by the operating system your application is running on, not the application's code itself.
 - The purpose of environment variables is to decouple configuration from the application.
@@ -21,7 +8,7 @@ puts
   
 - `ENV` or `env`: print list of environment variables on the command line.
 
-### Environment Variables in Ruby
+## Environment Variables in Ruby
 - `ENV` is a variable which behaves like a hash containing every available environment variable.
   - eg access the RACK_ENV with `ENV.fetch("RACK_ENV")` or `ENV["RACK_ENV"]`
   
@@ -37,6 +24,6 @@ puts
   - This is more convenient than setting them manually (using one of the two methods above).
   
 
-Sources:
+## Sources:
 - [Ruby environment variables](https://www.rubyguides.com/2019/01/ruby-environment-variables/)
 - 
