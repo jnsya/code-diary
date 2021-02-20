@@ -3,6 +3,10 @@
 - Networking
   - What's a packet?
   - What exactly is a networking protocol? What are the purposes of the main ones? (UDP, IP, FTP etc)
+  - what's a port? Why does port 80 come up a lot?
+
+- When an array is sorted
+- Writing to memory: When we say a value is written to a specific memory address, that means that the memory address will contain a binary representation of that value, is that right? What about when we're writing something more complicated than a string or a number - say a hash key that contains a serialized Ruby object.
   
 - Servers
   - https://computer.howstuffworks.com/web-server.htm
